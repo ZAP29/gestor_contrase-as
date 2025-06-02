@@ -1,0 +1,133 @@
+:root {
+  --color-bg: #000;
+  --color-text: #0f0;
+  --color-btn: #0f0;
+  --color-card: #111;
+  --transition-fast: 0.2s ease-in-out;
+  --transition-slow: 0.4s ease;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Courier New', monospace;
+  background: var(--color-bg);
+  color: var(--color-text);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  transition: background var(--transition-slow), color var(--transition-slow);
+}
+
+.container {
+  max-width: 700px;
+  width: 100%;
+  padding: 1rem;
+  animation: fadeIn 0.8s ease-in-out both;
+}
+
+h1, h2 {
+  transition: color var(--transition-slow);
+}
+
+input[type="text"],
+input[type="password"],
+input[type="range"] {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  margin: 0.25rem 0;
+  border: none;
+  border-radius: 5px;
+  transition: background var(--transition-fast), box-shadow var(--transition-fast);
+  background: #0a0a0a;
+  color: var(--color-text);
+}
+
+input:focus {
+  outline: none;
+  box-shadow: 0 0 5px var(--color-btn);
+}
+
+button {
+  background: var(--color-btn);
+  color: var(--color-bg);
+  border: none;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem 0.25rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background var(--transition-fast), transform var(--transition-fast);
+}
+
+button:hover {
+  background: #00cc77;
+  transform: scale(1.05);
+}
+
+label {
+  display: block;
+  margin-top: 0.5rem;
+}
+
+.history, .logins, .save-login, .generator {
+  background: var(--color-card);
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #0f03;
+  transition: box-shadow var(--transition-fast);
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+li {
+  margin-bottom: 5px;
+  background: #1a1a1a;
+  padding: 8px;
+  border-radius: 5px;
+  transition: background var(--transition-fast);
+}
+
+li:hover {
+  background: #222;
+}
+
+#installBtn {
+  background-color: #00cc77;
+  color: black;
+  font-weight: bold;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 1rem;
+  box-shadow: 0 0 8px #00cc77aa;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#installBtn:hover {
+  background-color: #00e68a;
+  transform: scale(1.05);
+}
+
+
+/* Animaciones */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

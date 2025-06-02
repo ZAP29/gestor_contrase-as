@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="css/styles.css" />
+  <title>ClaveFácil</title>
+</head>
+<body>
+  <main class="container">
+    <h1>🔐 ClaveFácil</h1>
+    <button id="installBtn" style="display:none;">📲 Instalar App</button>
+    <section class="generator">
+      <input type="text" id="passwordOutput" readonly />
+      <button id="generateBtn">Generar</button>
+      <button id="copyBtn">Copiar</button>
+      <label for="length">Longitud: <span id="lengthValue">12</span></label>
+      <input type="range" id="length" min="6" max="32" value="12" />
+    </section>
+    <section class="save-login">
+      <h2>Guardar credencial</h2>
+      <input type="text" id="site" placeholder="Sitio o app" />
+      <input type="text" id="username" placeholder="Usuario o email" />
+      <input type="text" id="savedPassword" placeholder="Contraseña" />
+      <button id="saveBtn">Guardar</button>
+    </section>
+    <section class="history">
+      <h2>Historial de contraseñas generadas</h2>
+      <ul id="historyList"></ul>
+    </section>
+    <section class="logins">
+      <h2>Mis contraseñas guardadas</h2>
+      <ul id="loginList"></ul>
+    </section>
+
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/dexie@3.2.4/dist/dexie.min.js"></script>
+  <script src="js/db.js"></script>
+  <script src="js/app.js" type="module"></script>
+</body>
+</html>
